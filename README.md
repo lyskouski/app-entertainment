@@ -14,7 +14,7 @@ gantt
   Initial                 :done, dis1, 2023-12-18, 13d
   Prototype               :done, dis2, 2024-01-01, 1M
   Market Shake Features   :done, dis3, 2024-02-01, 1M
-  UI / UX Flow            :done, dis4, 2023-03-01, 1M
+  UI / UX Flow            :done, dis4, 2024-03-01, 1M
 ```
 
 [![Watch the video](./docs/marketing-flow/presentation_video.png)](https://youtu.be/sNTbpILLsOw)
