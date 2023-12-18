@@ -107,7 +107,29 @@ initial error is replaced by:
   * What went wrong:
   Execution failed for task ':shared:compileKotlinLinuxX64'.
 
+Note: https://stackoverflow.com/questions/74890057/how-to-add-desktop-support-to-kotlin-multiplatform-mobile-project
 
 
 Note: Share UIs between iOS and Android. Create a Kotlin Multiplatform application that uses the Compose Multiplatform UI framework for sharing business logic and UIs among the iOS, Android, and desktop platforms.
 : https://kotlinlang.org/docs/multiplatform-get-started.html#dive-deep-into-kotlin-multiplatform
+
+With the Compose Multiplatform UI framework, you can push the code-sharing capabilities of Kotlin Multiplatform beyond application logic. You can implement the user interface once and then use it for all the platforms you target – iOS, Android, desktop, and web.
+
+
+https://kmp.jetbrains.com/ - Kotlin Multiplatform Wizard
+
+
+Checking the license for package Android SDK Build-Tools 33.0.1 in /home/vlyskouski/Work/_tercad/zabauka/licenses
+Warning: License for package Android SDK Build-Tools 33.0.1 not accepted.
+Checking the license for package Android SDK Platform 34 in /home/vlyskouski/Work/_tercad/zabauka/licenses
+Warning: License for package Android SDK Platform 34 not accepted.
+
+From the path where Android SDK has been installed (/home/vlyskouski/Android/Sdk/tools/bin/):
+> sdkmanager --licenses
+
+Or, by installing globally:
+> sudo apt install sdkmanager
+
+$ sudo sdkmanager --licenses
+Downloading https://f-droid.github.io/android-sdk-transparency-log/signed/checksums.json.asc into /root/.cache/sdkmanager/checksums.json.asc
+All SDK package licenses accepted.
