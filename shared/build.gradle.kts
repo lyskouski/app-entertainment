@@ -4,6 +4,18 @@ plugins {
 }
 
 kotlin {
+    linuxX64("linux") {
+
+    }
+
+    mingwX64("mingw") {
+
+    }
+
+    macosX64("macos") {
+
+    }
+
     androidTarget {
         compilations.all {
             kotlinOptions {
