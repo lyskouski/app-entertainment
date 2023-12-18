@@ -33,6 +33,20 @@ https://github.com/JetBrains/kotlin
 gradlew -n MyMultiplatformProject
 ```
 
+KMP supports the following platforms:
+- Android
+- iOS
+- macOS
+- watchOS
+- tvOS
+- Windows
+- Linux
+- Web
+
+While KMP provides Kotlin as the programming language, it doesn’t provide a UI. If you want to create a UI for Android, you can write it in native code or use the newer Jetpack Compose UI framework. For iOS, you can use UIKit or the newer SwiftUI framework using Swift. For the desktop, you can use Desktop Compose or Java Swing. In other words, you have a choice for how you write your UI. Many see this as an advantage — the UI will always be native, so it won’t suffer from the slow bridge communication that web-based frameworks have.
+
+: https://www.kodeco.com/books/kotlin-multiplatform-by-tutorials/v1.0/chapters/1-introduction
+
 
 For VS Code: ext install kotlin language.
 
