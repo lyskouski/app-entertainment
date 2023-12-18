@@ -133,3 +133,10 @@ Or, by installing globally:
 $ sudo sdkmanager --licenses
 Downloading https://f-droid.github.io/android-sdk-transparency-log/signed/checksums.json.asc into /root/.cache/sdkmanager/checksums.json.asc
 All SDK package licenses accepted.
+
+
+on macOS and linux:
+$ yes | sudo ~/Library/Android/sdk/tools/bin/sdkmanager --licenses
+
+on Windows:
+$ cmd.exe /C"%ANDROID_HOME%\tools\bin\sdkmanager.bat --licenses" 
