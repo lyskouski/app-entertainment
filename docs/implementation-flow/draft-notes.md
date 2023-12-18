@@ -107,3 +107,7 @@ initial error is replaced by:
   * What went wrong:
   Execution failed for task ':shared:compileKotlinLinuxX64'.
 
+
+
+Note: Share UIs between iOS and Android. Create a Kotlin Multiplatform application that uses the Compose Multiplatform UI framework for sharing business logic and UIs among the iOS, Android, and desktop platforms.
+: https://kotlinlang.org/docs/multiplatform-get-started.html#dive-deep-into-kotlin-multiplatform

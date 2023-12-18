@@ -5,11 +5,17 @@ plugins {
 
 kotlin {
     linuxX64("linux") {
-
+        binaries {
+            executable{
+                entryPoint = "main"
+            }
+        }
     }
 
     mingwX64("mingw") {
-
+        binaries {
+            executable()
+        }
     }
 
     macosX64("macos") {
