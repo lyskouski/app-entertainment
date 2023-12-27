@@ -19,20 +19,18 @@ import org.jetbrains.compose.resources.painterResource
 @Composable
 fun App() {
     MaterialTheme {
-        var greetingText by remember { mutableStateOf("Hello World!") }
-        var showImage by remember { mutableStateOf(false) }
+        var showContent by remember { mutableStateOf(false) }
+        val greeting = remember { Greeting().greet() }
+
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Button(onClick = {
-                greetingText = "Compose: ${Greeting().greet()}"
-                showImage = !showImage
-            }) {
-                Text(greetingText)
+            Button(onClick = { showContent = !showContent }) {
+                Text("Click me!")
             }
-            AnimatedVisibility(showImage) {
-                Image(
-                    painterResource("compose-multiplatform.xml"),
-                    null
-                )
+            AnimatedVisibility(showContent) {
+                Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+                    Image(painterResource("compose-multiplatform.xml"), null)
+                    Text("Compose: $greeting")
+                }
             }
         }
     }
