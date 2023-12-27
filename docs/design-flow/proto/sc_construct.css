@@ -1,0 +1,187 @@
+.sc-body, .sc-navigation, .sc-navigation-step {
+    margin: 0;
+    padding: 0;
+}
+
+.sc-body {
+    width: 1024px;
+    margin: 0 auto;
+    font-family: sans-serif;
+}
+
+.sc-navigation, .sc-container, .sc-switch {
+    width: 100%;
+    display: table;
+}
+.sc-navigation-step {
+    display: table-cell;
+    width: 33%;
+    padding: 4px 0 6px;
+
+    white-space: nowrap;
+    vertical-align: middle;
+    text-align: center;
+    text-transform: uppercase;
+    /* font-weight: 600; */
+
+    color: #fdfdfd;
+    text-shadow: -1px 0 0 #9f9f9f;
+
+    background: #494949;
+    border: 1px solid #9f9f9f;
+    border-right: none;
+}
+.sc-navigation-step:before {
+    position: relative;
+    float: right;
+    width: 21px;
+    height: 21px;
+    margin: 0 -11px -3px 0;
+    display: block;
+    box-sizing: border-box;
+    content:"|";
+    text-shadow: none;
+    color: rgba(255,255,255,0);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    border-radius: 5px 0 0 3px;
+    background: #494949;
+    border-right: 1px solid #9f9f9f;
+    border-bottom: 1px solid #9f9f9f;
+}
+
+.sc-navigation-step:last-child:before {
+    display: none;
+}
+
+.sc-inform {
+    text-align: center;
+    padding: 12px 0 32px;
+    color: #747474;
+}
+
+.sc-container-nav,
+.sc-container-step,
+.sc-container-view {
+    display: table-cell;
+    vertical-align: top;
+}
+.sc-container footer.sc-container-nav {
+    vertical-align: middle;
+}
+
+.sc-container-nav {
+    width: 19%;
+}
+.sc-container-step {
+    width: 15%;
+    font-variant: small-caps;
+}
+.sc-container-view {
+    width: 53%;
+}
+
+#sc-item-list {
+    border-top: 1px solid #9f9f9f;
+    margin-top: 24px;
+    padding-top: 24px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 390px;
+    margin-right: -43px;
+}
+
+.sc-button, .sc-switch {
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 6px 0 7px;
+
+    white-space: nowrap;
+    vertical-align: middle;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid #9f9f9f;
+    cursor: pointer;
+}
+
+.sc-switch, .sc-button.sc-switch {
+    padding: 0;
+}
+.sc-switch .sc-button {
+    width: 50%;
+    display: table-cell;
+}
+
+.sc-block {
+    width: 140px;
+    margin: 0 5px 16px;
+    height: 150px;
+    border: 1px solid #9f9f9f;
+    cursor: pointer;
+    text-align: center;
+}
+.sc-block img {
+    margin: 10px auto;
+    height: 130px;
+    width: 100px;
+}
+.sc-block .sc-thumb {
+    margin: 2%;
+    width: 96%;
+    height: 96%;
+}
+.sc-button:hover, .sc-block:hover, .sc-block.active {
+    background: #f1f1f1;
+}
+.sc-block.active {
+    opacity: 0.8;
+}
+
+#sc-plotter {
+    width: 80%;
+    margin-left: 10%;
+    height: 720px;
+    background: #f1f1f1;
+}
+#sc-plotter .sc-plotter-area {
+    width: 308px;
+    height: 720px;
+    position: absolute;
+}
+#sc-plotter .sc-plotter-area .sc-image {
+    position: absolute;
+    float: left;
+    width: 308px;
+    height: 720px;
+}
+
+.sc-shift {
+    margin-bottom: 90px;
+}
+
+.sc-active,
+.sc-active:hover,
+.sc-active:before,
+.sc-navigation-step.sc-active,
+.sc-navigation-step.sc-active:before {
+    background: #efa33b;
+}
+.sc-container .sc-active {
+    color: #fdfdfd;
+    text-shadow: 1px 1px 0 #d49a47;
+}
+
+.sc-hidden {
+    display: none;
+}
+.sc-invisible {
+    visibility: hidden;
+}
+
+.sc-image {
+    position: absolute;
+    width: 308px;
+    margin: 20px 49px;
+}
