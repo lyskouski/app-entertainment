@@ -1,2 +1,64 @@
 % Copyright 2023 The terCAD team. All rights reserved.
 % Use of this content is governed by a CC BY-NC-ND 4.0 license that can be found in the LICENSE file.
+
+\subsection{Kotlin}
+
+Kotlin, a versatile and multiparadigm programming language, places a strong emphasis on safety, conciseness, and 
+interoperability. Originally conceived to provide a more advanced alternative to Java, Kotlin has evolved far beyond 
+its initial purpose. It has seamlessly expanded its reach to cater to diverse platforms, including the Java Virtual 
+Machine (JVM), Android, JavaScript, and native applications. This evolution positions Kotlin as a dynamic language that 
+not only prioritizes developer-friendly features but also effortlessly adapts to the demands of various programming 
+environments.
+
+
+\subsubsection{Supporting Multiparadigm}
+
+At its inception, Kotlin's commitment to multiparadigmality went beyond the confines of traditional object-oriented 
+programming, extending its support to functional programming as well. This dual-paradigm approach empowers developers 
+with enhanced programming flexibility and the ability to seamlessly blend object-oriented and functional programming 
+concepts. Developers can leverage the strengths of object-oriented programming for modeling and organizing code 
+hierarchies, while simultaneously harnessing the power of functional programming for tasks such as handling collections, 
+immutability, and higher-order functions.
+
+\subsubsection{Defining Safety}
+
+Kotlin leverages a powerful type inference system, meaning that the compiler can automatically infer the type of a 
+variable based on its initialization, reducing verbosity in the code.
+
+\begin{lstlisting}
+// Explicit type declaration
+val name: String = "John"
+// Type inference
+val age = 25 // infers the type as Int
+\end{lstlisting}
+
+\noindent By default, variables in Kotlin are non-nullable, meaning they cannot hold a \q{null}-value. Nullable type 
+should be explicitly marked with a nullable type modifier, denoted by the \q{?}-symbol:
+
+\begin{lstlisting}
+val nullableName: String? = null
+\end{lstlisting}
+
+\noindent When the compiler detects a certain type check, it automatically casts the variable to that type within the 
+corresponding code block. This eliminates the need for explicit casting and enhances type safety:
+
+\begin{lstlisting}
+fun printLength(text: Any) {
+  if (text is String) {
+    // Within this block, 'text' is automatically cast to String
+    println("Length: ${text.length}")
+  }
+}
+\end{lstlisting}
+
+\noindent Kotlin restricts programmers from defining custom operators, emphasizing clarity (and preventing potential 
+troubles from the obfuscation of operator meanings). Instead, it places a deliberate focus on readability and 
+maintainability by allowing the redefinition of existing operators within specific contexts.
+
+
+\subsubsection{Following Conciseness}
+
+
+
+\subsubsection{Enabling Interoperability}
+
