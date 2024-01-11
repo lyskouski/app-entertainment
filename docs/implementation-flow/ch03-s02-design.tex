@@ -59,7 +59,6 @@ It might be used \q{voyager}-router by adding its libraries into the project by 
 \href{https://voyager.adriel.cafe/setup}{https://voyager.adriel.cafe/setup}-page.
 A Kotlin Multiplatform project can depend on multiplatform libraries that work for all target platforms:
 
-
 \begin{lstlisting}
 // ./composeApp/build.gradle.kts
 kotlin {
@@ -76,8 +75,7 @@ kotlin {
 \end{lstlisting}
 
 \noindent Regrettably, an error is raised due to the fact that WebAssembly (WASM) is currently in an unstable state
-(and not supported by that library):
-
+and not supported by that library:
 
 \begin{lstlisting}
 > Could not resolve all dependencies
