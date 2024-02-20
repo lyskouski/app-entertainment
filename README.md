@@ -57,5 +57,5 @@ The content herein are all &copy; 2023 **terCAD** Team (Viachaslau Lyskouski).
 - **Attribution**: provide a link to the license, and indicate if changes were made
 - **NonCommercial**: cannot be used as a part of a commercial solution
 - **NoDerivatives**: any modification (remix, transform, or build upon the material) cannot be distributed by your own. 
-  Push it back to the main repository (https://github.com/lyskouski/app-finance) to unblock the distribution for made 
+  Push it back to the main repository (https://github.com/lyskouski/app-entertainment) to unblock the distribution for made 
   changes.
