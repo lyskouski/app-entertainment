@@ -76,15 +76,15 @@ our sample project (\cref{img:i-webrun}):
 
 
 \begin{lstlisting}[language=terminal]
-$ gradlew build
+$ ./gradlew build
 
 Starting a Gradle Daemon (subsequent builds will be faster)
 ...
 BUILD SUCCESSFUL in 22s
 114 actionable tasks: 4 executed, 110 up-to-date
 
-# Run web version (or, 'gradlew run' for desktop)
-$ gradlew wasmJsBrowserRun
+## Run web version (or, 'gradlew run' for desktop)
+$ ./gradlew wasmJsBrowserRun
 
 Type-safe project accessors is an incubating feature.
 ...
@@ -93,6 +93,29 @@ Type-safe project accessors is an incubating feature.
 \end{lstlisting}
 
 \img{init/web-run}{WebAssembly (WASM) build run}{img:i-webrun}
+
+\noindent As a remark, in case of failure "Build failed with an exception":
+\begin{lstlisting}[language=terminal]
+Could not determine the dependencies of task ':composeApp:compileDebugJavaWithJavac'.
+> Could not determine the dependencies of null.
+  > Failed to install the following Android SDK packages as some licences have not been accepted.
+  platforms;android-34 Android SDK Platform 34
+  build-tools;34.0.0 Android SDK Build-Tools 34
+\end{lstlisting}
+
+\noindent To install missing Android SDK packages from the console, we need to use the \q{sdkmanager}-tool 
+provided with the Android SDK:
+
+\begin{lstlisting}[language=terminal]
+## Install Android SDK Manager
+$ sudo apt install sdkmanager
+
+## Install dependencies
+$ sudo sdkmanager --install "platforms;android-34" "build-tools;34.0.0"
+
+## Agree on conditions
+$ yes | sudo sdkmanager --licenses
+\end{lstlisting}
 
 
 \subsection{Configuring Linters}
