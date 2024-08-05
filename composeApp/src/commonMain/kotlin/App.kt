@@ -8,6 +8,8 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.DropdownMenu
 import androidx.compose.material.DropdownMenuItem
+import androidx.compose.material.darkColors
+import androidx.compose.material.lightColors
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -22,125 +24,16 @@ import cafe.adriel.voyager.core.screen.uniqueScreenKey
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import cafe.adriel.voyager.navigator.Navigator
+import com.tercad.zabauka.screen.HomeScreen
+import com.tercad.zabauka.settings.CustomTheme
 
-@Composable
-fun ImageSelector(imageResources: List<String>, default: String) {
-    var selectedImagePainter by remember { mutableStateOf(default) }
-    var expanded by remember { mutableStateOf(false) }
-
-    Box {
-        //Image(
-        //    painter = painterResource(resourcePath = selectedImagePainter),
-        //    contentDescription = null,
-        //    modifier = Modifier
-        //        .size(200.dp)
-        //        .clickable { expanded = true }
-        //)
-        Button(
-            onClick = { expanded = true },
-        ) {
-            Text(text = "Expand")
-        }
-        if (expanded) {
-            DropdownMenu(
-                expanded = expanded,
-                onDismissRequest = { expanded = false },
-                modifier = Modifier.background(Color.White)
-            ) {
-                imageResources.forEach { imageRes ->
-                    DropdownMenuItem(onClick = {
-                        selectedImagePainter = imageRes
-                        expanded = false
-                    }) {
-                        //Image(
-                        //    painter = painterResource(resourcePath = imageRes),
-                        //    contentDescription = null,
-                        //    modifier = Modifier.size(200.dp)
-                        //)
-                        Text(text = imageRes)
-                    }
-                }
-            }
-        }
-    }
-}
-
-class PostListScreen : Screen {
-    override val key: ScreenKey = uniqueScreenKey
-
-    @Composable
-    override fun Content() {
-        LifecycleEffect(
-            onStarted = { println("Navigator: Start screen") },
-            onDisposed = { println("Navigator: Dispose screen") }
-        )
-
-        val navigator = LocalNavigator.currentOrThrow
-
-        Button(
-            onClick = { navigator.push(SampleListScreen()) },
-        ) {
-            Text(text = "Push")
-        }
-    }
-}
-
-class SampleListScreen : Screen {
-    override val key: ScreenKey = uniqueScreenKey
-
-    @Composable
-    override fun Content() {
-        LifecycleEffect(
-            onStarted = { println("Navigator: Start screen") },
-            onDisposed = { println("Navigator: Dispose screen") }
-        )
-
-        val navigator = LocalNavigator.currentOrThrow
-
-        Button(
-            onClick = { navigator.push(PostListScreen()) },
-        ) {
-            Text(text = "Pop")
-        }
-    }
-}
 
 @Composable
 @Preview
 fun App() {
-    Navigator(
-        screen = PostListScreen()
-    )
-    /*
-    val imageResources = listOf(
-        "drawable/compose-multiplatform.xml",
-        "drawable/compose-multiplatform1.xml",
-        "drawable/compose-multiplatform2.xml"
-    )
-    val default = "drawable/compose-multiplatform.xml"
-
-    MaterialTheme {
-        var showContent by remember { mutableStateOf(false) }
-        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Button(onClick = { showContent = !showContent }) {
-                Text("Click me!")
-            }
-            AnimatedVisibility(showContent) {
-                val greeting = remember { Greeting().greet() }
-                Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-                //    Image(painter = painterResource(resourcePath = "drawable/compose-multiplatform.xml"), contentDescription = null)
-                    Text("Compose: $greeting")
-                }
-            }
-            Button(
-                onClick = { navigator.push(PostListScreen()) },
-            ) {
-                Text(text = "Page")
-            }
-            ImageSelector(imageResources, default)
-            ImageSelector(imageResources, default)
-            ImageSelector(imageResources, default)
-        }
+    CustomTheme {
+        Navigator(
+            screen = HomeScreen()
+        )
     }
-     */
 }
