@@ -63,6 +63,9 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
+            implementation(libs.cafe.voyager.navigator)
+            implementation(libs.cafe.voyager.screenmodel)
+            implementation(libs.cafe.voyager.transitions)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
@@ -105,6 +108,9 @@ android {
     dependencies {
         debugImplementation(compose.uiTooling)
     }
+}
+dependencies {
+    implementation(libs.androidx.foundation.android)
 }
 
 compose.desktop {

@@ -1,7 +1,7 @@
 % Copyright 2023 The terCAD team. All rights reserved.
 % Use of this content is governed by a CC BY-NC-ND 4.0 license that can be found in the LICENSE file.
 
-\subsection{Emerging Design}
+\subsection{Routing}
 
 An entry point differs per each system:
 
@@ -56,32 +56,65 @@ fun App() {
 
 It might be used \q{voyager}-router by adding its libraries into the project by updating 
 \q{gradle/libs.versions.toml}-file in accordance with instructions from 
-\href{https://voyager.adriel.cafe/setup}{https://voyager.adriel.cafe/setup}-page.
-A Kotlin Multiplatform project can depend on multiplatform libraries that work for all target platforms:
+\href{https://voyager.adriel.cafe/setup}{https://voyager.adriel.cafe/setup}-page:
 
 \begin{lstlisting}
 // ./composeApp/build.gradle.kts
 kotlin {
     sourceSets {
-+        val voyagerVersion = "1.0.0"
-
         commonMain.dependencies {
-+            implementation("cafe.adriel.voyager:voyager-navigator:$voyagerVersion")
-+            implementation("cafe.adriel.voyager:voyager-tab-navigator:$voyagerVersion")
-+            implementation("cafe.adriel.voyager:voyager-transitions:$voyagerVersion")
++            implementation(libs.cafe.voyager.navigator)
++            implementation(libs.cafe.voyager.screenmodel)
++            implementation(libs.cafe.voyager.transitions)
+\end{lstlisting}
+
+\begin{lstlisting}
+// gradle/libs.versions.toml
+[versions]
++ voyager = "1.1.0-beta02"
+
+[libraries]
++ cafe-voyager-navigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyager" }
++ cafe-voyager-screenmodel = { module = "cafe.adriel.voyager:voyager-screenmodel", version.ref = "voyager" }
++ cafe-voyager-transitions = { module = "cafe.adriel.voyager:voyager-transitions", version.ref = "voyager" }
+\end{lstlisting}
+
+\noindent That gives an opportunity to navigate across different screens:
+
+\begin{lstlisting}
+@Composable
+@Preview
+fun App() {
+    CustomTheme {
+        Navigator(
+            screen = HomeScreen()
+        )
+    }
+}
+
+class HomeScreen : Screen {
+    @Composable
+    override fun Content() {
+        val navigator = LocalNavigator.currentOrThrow
+
+        Button(
+            onClick = { navigator.push(DressUpScreen()) },
+        ) {
+            Text(text = "Open Dress Up")
         }
     }
 }
-\end{lstlisting}
 
-\noindent Regrettably, an error is raised due to the fact that WebAssembly (WASM) is currently in an unstable state
-and not supported by that library:
+class DressUpScreen : Screen {
+    @Composable
+    override fun Content() {
+        val navigator = LocalNavigator.currentOrThrow
 
-\begin{lstlisting}
-> Could not resolve all dependencies
-  Incompatible because this component declares a component for use 
-  during compile-time, as well as attribute 'org.jetbrains.kotlin.platform.type' 
-  with value 'androidJvm' and the consumer needed a component for use during 
-  'kotlin-runtime', as well as attribute 'org.jetbrains.kotlin.platform.type' 
-  with value 'wasm'
+        Button(
+            onClick = { navigator.pop() },
+        ) {
+            Text(text = "Back")
+        }
+    }
+}
 \end{lstlisting}
