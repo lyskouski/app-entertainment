@@ -25,7 +25,11 @@ import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 import zabauka.composeapp.generated.resources.Res
+import zabauka.composeapp.generated.resources.appDressUp
+import zabauka.composeapp.generated.resources.appPuzzles
+import zabauka.composeapp.generated.resources.appTracingLetters
 import zabauka.composeapp.generated.resources.compose_multiplatform
 import zabauka.composeapp.generated.resources.compose_multiplatform1
 import zabauka.composeapp.generated.resources.compose_multiplatform2
@@ -36,9 +40,9 @@ class HomeScreen : Screen {
         val navigator = LocalNavigator.currentOrThrow
 
         val items = listOf(
-            Pair(Res.drawable.compose_multiplatform, "Dress Up"),
-            Pair(Res.drawable.compose_multiplatform1, "Puzzles"),
-            Pair(Res.drawable.compose_multiplatform2, "Tracing Letters"),
+            Pair(Res.drawable.compose_multiplatform, stringResource(Res.string.appDressUp)),
+            Pair(Res.drawable.compose_multiplatform1, stringResource(Res.string.appPuzzles)),
+            Pair(Res.drawable.compose_multiplatform2, stringResource(Res.string.appTracingLetters)),
         )
 
         LazyVerticalGrid(

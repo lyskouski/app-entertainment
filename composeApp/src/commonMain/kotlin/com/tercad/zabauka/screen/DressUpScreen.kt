@@ -22,8 +22,11 @@ import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import com.tercad.zabauka.screen.dressup.ImageSelector
+import org.jetbrains.compose.resources.stringResource
 
 import zabauka.composeapp.generated.resources.Res
+import zabauka.composeapp.generated.resources.appDressUp
+import zabauka.composeapp.generated.resources.btnBack
 import zabauka.composeapp.generated.resources.compose_multiplatform
 import zabauka.composeapp.generated.resources.compose_multiplatform1
 import zabauka.composeapp.generated.resources.compose_multiplatform2
@@ -43,13 +46,13 @@ class DressUpScreen : Screen {
 
         Scaffold(topBar = {
             TopAppBar(title = {
-                Text("Dress Up")
+                Text(stringResource(Res.string.appDressUp))
             },
                 navigationIcon = {
                     IconButton({ navigator.pop() }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = "Back"
+                            contentDescription = stringResource(Res.string.btnBack)
                         )
                     }
                 })
