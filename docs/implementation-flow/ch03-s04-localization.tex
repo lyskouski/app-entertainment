@@ -1,6 +1,35 @@
 % Copyright 2023 The terCAD team. All rights reserved.
 % Use of this content is governed by a CC BY-NC-ND 4.0 license that can be found in the LICENSE file.
 
-\subsection{Localizing Application}
+\subsection{[TBD] Localizing Application}
 
-\cite{Beci24} https://medium.com/@dzenanbecirovicc/compose-multiplatform-localization-ec6745961ddc
+\cite{Beci24} 
+
+https://medium.com/@dzenanbecirovicc/compose-multiplatform-localization-ec6745961ddc
+
+https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-images-resources.html#resource-usage
+
+Language and regional qualifiers
+
+You can combine language and region qualifiers:
+
+    The language is defined by a two-letter (ISO 639-1) or a three-letter (ISO 639-2) language code.
+
+    You can add a two-letter ISO 3166-1-alpha-2 regional code to your language code. The regional code must have a lowercase r prefix, for example: drawable-spa-rMX
+
+
+Currently, arguments have basic support in string resources:
+
+<resources>
+    <string name="str_template">Hello, %1$s! You have %2$d new messages.</string>
+
+
+There is no difference between %...s and %...d when using string templates with arguments from composable code, for example:
+
+Text(stringResource(Res.string.str_template, "User_name", 100))
+
+<resources>
+    <plurals name="new_message">
+        <item quantity="one">%1$d new message</item>
+        <item quantity="other">%1$d new messages</item>
+    </plurals>
